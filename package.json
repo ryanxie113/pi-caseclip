@@ -1,0 +1,23 @@
+{
+  "name": "pi-caseclip",
+  "version": "0.1.0",
+  "description": "Save an agent mistake and your correction as a local, reviewable case card. No model calls.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["pi-package", "pi-extension", "agent", "evaluation", "debugging"],
+  "engines": { "node": ">=22.19.0" },
+  "files": ["dist", "examples", "README.md", "README.zh-CN.md", "CHANGELOG.md", "LICENSE"],
+  "pi": { "extensions": ["./dist/index.js"] },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "demo": "npm run build && node scripts/demo.mjs",
+    "verify:host": "npm run build && node scripts/verify-host.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.5.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  }
+}
